@@ -45,23 +45,41 @@ class DimEst{
 public:
     DimEst(){};
 
-    DimEst(String filename, String meth, String dataform, String para_fname)
-    {
-        double **dist = NULL;
-        initial_DimEst(filename, dist, 0, 0, meth, dataform, para_fname);
-    };
-
-    void initial_DimEst(String filename, double **dist, int sizeinput, int diminput, String meth, String dataform, String para_fname);
-
-#ifdef COMMAND_LINE_VERSION
-    DimEst(String filename, String meth, String dataform, String para_fname)
-    {
-        initial_DimEst(filename, method, dataform, para_fname);
-    }
-    void initial_DimEst(String filename, String meth, String dataform, String para_fname);
-
-    void init_parameters(String para_filename);
+#ifdef _MAC
+	DimEst(String filename, String meth, String dataform, String para_fname)
+	{
+		double **dist = NULL;
+		initial_DimEst(filename, dist, 0, 0, meth, dataform, para_fname);
+	};
 #endif
+    
+#ifdef _WINDOWS
+	DimEst(String filename, String meth, String dataform, String para_fname)
+	{
+		double **dist = NULL;
+		initial_DimEst(filename, dist, 0, 0, meth, dataform, para_fname);
+	};
+#endif
+    
+#ifdef _LINUX
+	DimEst(String filename, String meth, String dataform, String para_fname)
+	{
+		double **dist = NULL;
+		initial_DimEst(filename, dist, 0, 0, meth, dataform, para_fname);
+	}; 
+#endif
+    
+#ifdef COMMAND_LINE_VERSION
+	DimEst(String filename, String meth, String dataform, String para_fname)
+	{
+		initial_DimEst(filename, method, dataform, para_fname);
+	}
+	void initial_DimEst(String filename, String meth, String dataform, String para_fname);
+
+	void init_parameters(String para_filename);
+#endif
+
+	void initial_DimEst(String filename, double **dist, int sizeinput, int diminput, String meth, String dataform, String para_fname);
 
 	void Compute_Dim();
 
