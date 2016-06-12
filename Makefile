@@ -1,15 +1,14 @@
 CC = g++
 
-#WH HPC path
-#ROOTPATH = /panfs/storage.local/genacc/home/wh08/CLAPACK-3.2.1
+#Linux path
+#ROOTPATH = <PATH_TO_CLAPACK>/clapack-3.2.1-CMAKE
 #INCDIRS = -I$(ROOTPATH)/INCLUDE
-#CLAPLIB = $(ROOTPATH)/lapack_MAC.a
-#BLASLIB = $(ROOTPATH)/blas_MAC.a
+#CLAPLIB = $(ROOTPATH)/lapack_LINUX.a
+#BLASLIB = $(ROOTPATH)/blas_LINUX.a
 #F2CLIB = $(ROOTPATH)/F2CLIBS/libf2c.a
-##BLWRLIB = $(ROOTPATH)/libcblaswr.a
 
-#WH mac path
-ROOTPATH = /Users/whuang/TreeScaper_dev/clapack-3.2.1-CMAKE
+#Mac path
+ROOTPATH = <PATH_TO_CLAPACK>/clapack-3.2.1-CMAKE
 INCDIRS = -I$(ROOTPATH)/INCLUDE
 CLAPLIB = $(ROOTPATH)/lapack_MAC.a
 BLASLIB = $(ROOTPATH)/blas_MAC.a
